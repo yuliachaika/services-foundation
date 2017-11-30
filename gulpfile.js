@@ -33,9 +33,19 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./assets/dist/css'));
 });
 
+
 gulp.task('javascript', function (cb) {
     pump([
-            gulp.src(['assets/components/foundation-sites/dist/js/foundation.js', 'assets/src/javascript/plugins/*.js', 'assets/src/javascript/scripts.js'])
+            gulp.src([
+                'assets/components/jquery/dist/jquery.min.js',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.core.js',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.util.*',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.drilldown.js',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.responsiveMenu.js',
+                'assets/components/foundation-sites/dist/js/plugins/foundation.responsiveToggle.js',
+                'assets/src/javascript/plugins/*.js',
+                'assets/src/javascript/scripts.js'])
             .pipe(concat('global.js')),
             uglify(),
             gulp.dest('assets/dist/javascript')
