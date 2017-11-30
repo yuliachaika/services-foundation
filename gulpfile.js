@@ -37,7 +37,7 @@ gulp.task('sass', function () {
 gulp.task('javascript', function (cb) {
     pump([
             gulp.src([
-                'assets/components/jquery/dist/jquery.min.js',
+                'assets/components/jquery/dist/jquery.js',
                 'assets/components/foundation-sites/dist/js/plugins/foundation.core.js',
                 'assets/components/foundation-sites/dist/js/plugins/foundation.util.*',
                 'assets/components/foundation-sites/dist/js/plugins/foundation.drilldown.js',
