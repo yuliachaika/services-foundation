@@ -1,0 +1,77 @@
+.plans {
+  padding-bottom: rem-calc(120); 
+  &__row {
+    @include flex-grid-row();
+    &--title {
+      padding: rem-calc(120) rem-calc(15) rem-calc(90); 
+      justify-content: center;
+    }
+    &--col {
+      justify-content: center;
+    }
+  }
+  &__title {
+    @include title-shadow();
+    &-wrap {
+      text-align: center;
+      @include breakpoint(medium) {
+        @include flex-grid-column(12);
+      }
+      @include breakpoint(large) {
+        @include flex-grid-column(8);
+      }
+    }
+  }
+  &__text {
+    @include text(24px);
+  }
+  &-col {
+    margin-bottom: rem-calc(30); 
+    @include breakpoint(small) {
+      @include flex-grid-column(8);
+    }
+    @include breakpoint(medium) {
+      @include flex-grid-column(6);
+    }
+    @include breakpoint(large) {
+      @include flex-grid-column(4);
+    }
+    &__wrap {
+      padding: rem-calc(15) rem-calc(30) rem-calc(40); 
+      border-top: 5px solid $green; 
+      position: relative;
+      transition: all .3s ease; 
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 0px solid transparent;
+        border-top: 10px solid $green;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+      }
+    }
+    &__title {
+      @include title(30, 48);
+    }
+    &__price {
+      @include btn-small();
+    }
+    &__list {
+      padding: 40px 0 24px;
+      @extend .work-list;
+    }
+    &__item {
+      @extend .work-list__item;
+    }
+    &__btn {
+      @include btn();
+    }
+  }
+}

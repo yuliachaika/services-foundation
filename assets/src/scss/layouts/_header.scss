@@ -1,0 +1,32 @@
+.header {
+  &__row {
+    @include flex-grid-row();
+    justify-content: space-between;
+  }
+  &__nav {
+    @include flex-grid-column(10);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-title {
+      padding-left: rem-calc(10);
+    }
+    &-icon {
+      @include hamburger($light-gray, $light-gray, 20px, 16px, 2px, 3);
+    }
+  }
+  &__logo {
+    @include flex-grid-column(2);
+    color: $dark-gray;
+    font-family: $primary-font-family;
+    font-size: rem-calc(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 15;
+    transition: all .3s ease; 
+    &:hover {
+      cursor: pointer;
+      color: $light-gray; 
+    }
+  }
+}

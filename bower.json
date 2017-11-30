@@ -1,0 +1,16 @@
+{
+  "name": "foundation",
+  "description": "foundation",
+  "main": "gulpfile.js",
+  "author": "yulia",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.8.1",
+    "foundation-sites": "^6.4.3"
+  }
+}

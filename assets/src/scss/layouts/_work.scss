@@ -1,0 +1,124 @@
+.work {
+  &__row {
+    @include flex-grid-row();
+    &--title {
+      padding: rem-calc(140) rem-calc(15) rem-calc(90); 
+      justify-content: center;
+    }
+    &--col {
+      justify-content: space-between;
+    }
+    &--info {
+      padding-bottom: rem-calc(150); 
+    }
+  }
+  &__title {
+    @include title-shadow();
+    &-wrap {
+      text-align: center;
+      @include breakpoint(small) {
+        @include flex-grid-column(12);
+      }
+      @include breakpoint(large) {
+        @include flex-grid-column(8);
+      }
+    }
+  }
+  &__text {
+    @include text(24px);
+  }
+  &__info {
+    &-wrap {
+      @include breakpoint(small) {
+        @include flex-grid-column(12);
+      }
+      @include breakpoint(medium) {
+        @include flex-grid-column(6);
+      }
+    }
+    &-text {
+      @include text(30px);
+      padding-bottom: rem-calc(20); 
+    }
+    &-col {
+      @include breakpoint(small) {
+        @include flex-grid-column(12);
+        justify-content: center;
+      }
+      @include breakpoint(large) {
+        @include flex-grid-column(6);
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    &-wrap {
+      @include breakpoint(small) {
+        @include flex-grid-column(12);
+      }
+      @include breakpoint(medium) {
+        @include flex-grid-column(6);
+      }
+    }
+  }
+  &-list {
+    margin-left: 0;
+    list-style: none;
+    &__item {
+      padding-left: rem-calc(20); 
+      @include text(30);
+      position: relative;
+      &::before {
+        content: '\f374';
+        position: absolute;
+        left: 0;
+        font-family: "Ionicons";
+        font-size: rem-calc(14);
+        font-weight: 400;
+        line-height: rem-calc(30);
+        color: $green;
+      }
+    } 
+  }
+  &-icon {
+    color: $dark-gray;
+    font-family: Ionicons;
+    font-size: rem-calc(60);
+    font-weight: 400;
+    line-height: rem-calc(30);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: rem-calc(50);
+      height: rem-calc(20);
+      bottom: rem-calc(4);
+      background-color: $green;
+      z-index: -1;
+      bottom: 6px;
+      left: -10px;
+      margin: auto;
+    }
+    &__wrap {
+      text-align: center;
+      @include breakpoint(small) {
+        @include flex-grid-column(12);
+      }
+      @include breakpoint(medium) {
+        @include flex-grid-column(6);
+      }
+      @include breakpoint(large) {
+        @include flex-grid-column(3);
+      }
+    }
+    &__title {
+      @include title(18, 30); 
+    }
+    &__text {
+      @include text(30);
+    }
+  }
+}

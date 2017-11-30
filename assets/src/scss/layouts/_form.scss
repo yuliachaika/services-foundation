@@ -1,0 +1,59 @@
+.form {
+  background-color: $green; 
+  &__row {
+    padding: rem-calc(36) 0 rem-calc(50); 
+    @include flex-grid-row();
+  }
+  &-col {
+    @include breakpoint(medium) {
+      @include flex-grid-column(12);
+    }
+    @include breakpoint(large) {
+      @include flex-grid-column(6);
+    }
+    &--white {
+      padding-top: rem-calc(10); 
+    }
+    &__wrap {
+      &--white {
+        padding: rem-calc(10) rem-calc(25) rem-calc(20) rem-calc(15);
+        background-color: $white; 
+      }
+    }
+  }
+  &__title {
+    @include title(24, 36);
+  }
+  &__info {
+    padding-right: rem-calc(50); 
+    @include text(24);
+    color: $medium-gray;
+  }
+  &__text {
+    padding-bottom: rem(30);  
+    @include title(30, 48);
+    color: $white; 
+  }
+  &__btn {
+    @include btn();
+    &--white {
+      @include btn-white();
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch; 
+  }
+  &__input {
+    padding: 0 rem-calc(20); 
+    @include title(12, 48);
+    transition: all .3s ease; 
+    &:hover {
+      cursor: pointer;
+      border-color: $green;
+    }
+  }
+  
+}

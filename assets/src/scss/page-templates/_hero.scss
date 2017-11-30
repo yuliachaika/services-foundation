@@ -1,0 +1,24 @@
+.hero {
+  padding-top: rem-calc(40); 
+  height: 100vh;
+  position: relative;
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  &__row{
+    @include flex-grid-row();
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    padding: rem-calc(50) 0;
+    @include breakpoint(small only) {
+      min-height: rem-calc(200);
+    }
+  }
+
+  &__title {
+    @include title(36, 48);
+  }  
+}
