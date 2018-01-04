@@ -1,5 +1,8 @@
 .plans {
   padding-bottom: rem-calc(120); 
+  @include breakpoint(large) {
+    padding-bottom: rem-calc(120);  
+  }
   &__row {
     @include flex-grid-row();
     &--title {
