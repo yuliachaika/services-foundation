@@ -27,20 +27,26 @@
   &-nav {
     list-style: none;
     padding-left: 0; 
+    margin-left: 0;
     display: flex;
-    flex-direction: row;
+    
     flex-wrap: wrap;
     @include breakpoint(small) {
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
     }
     @include breakpoint(large) {
+      flex-direction: row;
       justify-content: start; 
     }
   }
   &-item {
     padding: 0 rem-calc(16); 
     &:first-child {
+      @include breakpoint(large) {
       padding-left: 0; 
+      }
     }
     &__link {
       padding: 0; 
@@ -54,6 +60,9 @@
       transition: all .3s ease;
       &:hover {
         cursor: pointer;
+        color: $green;  
+      }
+      &:focus {
         color: $green;  
       }
     }

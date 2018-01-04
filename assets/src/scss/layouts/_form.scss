@@ -5,14 +5,12 @@
     @include flex-grid-row();
   }
   &-col {
+    padding: rem-calc(10);
     @include breakpoint(medium) {
       @include flex-grid-column(12);
     }
     @include breakpoint(large) {
       @include flex-grid-column(6);
-    }
-    &--white {
-      padding-top: rem-calc(10); 
     }
     &__wrap {
       &--white {
